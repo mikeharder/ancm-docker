@@ -1,1 +1,1 @@
-docker build -t ancm:windowsservercore-1803 -f %~dp0/Dockerfile %~dp0/.. %*
+docker build -t microsoft/ancm:windowsservercore-1803 . %*
