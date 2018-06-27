@@ -10,7 +10,7 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 
-FROM microsoft/ancm:windowsservercore-1803
+FROM microsoft/ancm:2.1-windowsservercore-1803
 RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
 WORKDIR /inetpub/wwwroot
 COPY --from=build /app/out ./

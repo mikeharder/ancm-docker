@@ -1,1 +1,1 @@
-docker run -it --rm -p 8000:80 --name ancm-app-21 app %%*
+docker run -it --rm -p 8000:80 --name ancm-app-2.1 ancm-app:2.1 %%*
