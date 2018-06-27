@@ -6,3 +6,5 @@ Dockerfile
 bin
 obj
 *.cmd
+inproc
+outproc

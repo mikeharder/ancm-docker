@@ -17,9 +17,10 @@ Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 4. (Optional) Delete hosting bundle from local directory
 5. `cd ..\app`
 6. Edit `app.csproj` and set `RuntimeFrameworkVersion` and `MicrosoftAspNetCoreAppPackageVersion` to versions installed by hosting bundle
-7. `build-[outproc|inproc].cmd`
-8. `run-[outproc|inproc].cmd`
-9. `test-[outproc|inproc].cmd`
+7. `cd [inproc|outproc]`
+7. `build.cmd`
+8. `run.cmd`
+9. `test.cmd`
 
 ## Additional Utility scripts
 ### attach.cmd
