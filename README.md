@@ -5,7 +5,7 @@ Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 ## netcoreapp2.1 + ANCM v1 (Out-Of-Process)
 1. `cd 2.1\windowsservercore-1803`
 2. `build.cmd`
-3. `cd ..\app`
+3. `cd ..\app\outproc`
 4. `build.cmd`
 5. `run.cmd`
 6. `test.cmd`
@@ -27,10 +27,16 @@ Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 Attaches command prompt to running container.  Useful for inspecting the state of the container while running, debugging, etc.
 
 ### eventlog.cmd
-Write events from provider `IIS AspNetCore Module` to console
+Write events from provider `IIS AspNetCore Module` to console.
 
 ### explore.cmd
 Runs image with command prompt instead of starting IIS.  Useful for inspecting the state of the container before IIS starts.
 
+### offline.cmd
+Creates `app_offline.htm`.
+
+### online.cmd
+Deletes `app_offline.htm`.
+
 ### tasklist.cmd
-Writes task list to console
+Writes task list to console.
