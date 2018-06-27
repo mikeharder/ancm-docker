@@ -1,1 +1,1 @@
-curl http://localhost:8000
+curl -v http://localhost:8000
