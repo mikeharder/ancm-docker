@@ -11,7 +11,6 @@ RUN dotnet restore --disable-parallel
 COPY . ./
 ARG hosting_model
 RUN dotnet publish -c Release -o out /p:AspNetCoreModuleHostingModel=%hosting_model%
-# RUN dotnet publish -c Release -o out
 
 FROM microsoft/ancm:2.2-windowsservercore-1803
 RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
