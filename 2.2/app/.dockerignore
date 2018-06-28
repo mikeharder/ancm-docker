@@ -3,8 +3,11 @@
 Dockerfile
 
 # Misc
+.vs
 bin
 obj
 host-inproc
 inproc
 outproc
+Properties
+*.csproj.user

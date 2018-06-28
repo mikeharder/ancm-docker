@@ -3,7 +3,9 @@
 Dockerfile
 
 # Misc
+.vs
 bin
 obj
 outproc
-*.cmd
+Properties
+*.csproj.user
