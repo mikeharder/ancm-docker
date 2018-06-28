@@ -5,6 +5,6 @@ Dockerfile
 # Misc
 bin
 obj
-*.cmd
+host-inproc
 inproc
 outproc
