@@ -5,6 +5,7 @@
 
 # Custom
 *.exe
+[Oo]ut
 
 # User-specific files
 *.suo
