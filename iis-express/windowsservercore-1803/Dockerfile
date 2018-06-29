@@ -14,6 +14,7 @@ EXPOSE 80
 
 WORKDIR /app
 
+# Add custom applicationhost.config to disable .NET Framework which fails inside container (search file for "MODIFICATION")
 COPY index.html applicationhost.config /app/
 
 ENTRYPOINT [ "C:\\Program Files\\IIS Express\\iisexpress.exe", "/config:C:\\app\\applicationhost.config", "/systray:false" ]
