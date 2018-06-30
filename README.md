@@ -24,6 +24,22 @@ Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 10. `run.cmd`
 11. `test.cmd`
 
+## netcoreapp2.1 + IIS Express + ANCM v1 (Out-Of-Process)
+1. `cd iis-express\windowsservercore-1803`
+1. `build.cmd`
+1. `cd ..\..`
+1. `cd ancm-express\2.1\windowsservercore-1803`
+1. Copy IIS Express MSIs (listed below) to this directory
+   1. `ancm_iis_express_x64_en.msi`
+   1. `ancm_iis_express_x86_en.msi`
+1. `build.cmd`
+1. (Optional) Delete hosting bundle and MSIs from local directory
+1. `cd ..\..\..`
+1. `cd app\2.1\outproc-express`
+1. `build.cmd`
+1. `run.cmd`
+1. `test.cmd`
+
 ## netcoreapp2.2 + IIS Express + ANCM v2 (Out-Of-Process or In-Process)
 1. `cd iis-express\windowsservercore-1803`
 1. `build.cmd`

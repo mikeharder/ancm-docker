@@ -1,0 +1,1 @@
+docker run -it --rm -p 8009:80 --name microsoft-ancm-express-2.1-windowsservercore-1803 microsoft/ancm-express:2.1-windowsservercore-1803
