@@ -11,5 +11,6 @@ inproc-express
 inproc-host
 inproc
 outproc
+outproc-express
 Properties
 *.csproj.user
