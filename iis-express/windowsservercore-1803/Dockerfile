@@ -12,9 +12,9 @@ RUN netsh interface portproxy add v4tov6 listenport=80 connectaddress=[::1] conn
 
 EXPOSE 80
 
-WORKDIR /app
-
 # Add custom applicationhost.config to disable .NET Framework which fails inside container (search file for "MODIFICATION")
-COPY index.html applicationhost.config /app/
+COPY applicationhost.config /
 
-ENTRYPOINT [ "C:\\Program Files\\IIS Express\\iisexpress.exe", "/config:C:\\app\\applicationhost.config", "/systray:false" ]
+COPY index.html /inetpub/wwwroot/
+
+ENTRYPOINT [ "C:\\Program Files\\IIS Express\\iisexpress.exe", "/config:C:\\applicationhost.config", "/systray:false" ]

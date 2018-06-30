@@ -1,0 +1,1 @@
+docker run -it --rm --entrypoint cmd -p 8006:80 --name microsoft-ancm-express-2.2-windowsservercore-1803 microsoft/ancm-express:2.2-windowsservercore-1803

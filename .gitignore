@@ -5,6 +5,7 @@
 
 # Custom
 *.exe
+*.msi
 [Oo]ut
 
 # User-specific files

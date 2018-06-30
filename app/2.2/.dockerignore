@@ -6,7 +6,9 @@ Dockerfile
 .vs
 bin
 obj
-host-inproc
+express
+inproc-express
+inproc-host
 inproc
 outproc
 Properties
