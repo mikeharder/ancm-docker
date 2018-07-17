@@ -17,4 +17,4 @@ COPY applicationhost.config /
 
 COPY index.html /inetpub/wwwroot/
 
-ENTRYPOINT [ "C:\\Program Files\\IIS Express\\iisexpress.exe", "/config:C:\\applicationhost.config", "/systray:false" ]
+ENTRYPOINT while ($true) { & 'C:\\Program Files\\IIS Express\\iisexpress.exe' /config:C:\\applicationhost.config /systray:false }
