@@ -6,6 +6,7 @@ Dockerfile
 .vs
 bin
 obj
+iis
 iis-express
 outproc
 outproc-express
