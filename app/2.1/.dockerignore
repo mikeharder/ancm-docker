@@ -1,6 +1,5 @@
 # Docker
 .dockerignore
-Dockerfile
 
 # Misc
 .vs
