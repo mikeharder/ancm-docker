@@ -8,5 +8,6 @@ bin
 obj
 outproc
 outproc-express
+outproc-multi-app
 Properties
 *.csproj.user
