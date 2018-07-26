@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.1.300-sdk-nanoserver-1803 AS build
+FROM microsoft/dotnet:2.1.302-sdk-nanoserver-1803 AS build
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
