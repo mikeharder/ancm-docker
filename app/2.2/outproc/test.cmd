@@ -1,1 +1,1 @@
-for /f %%i in ('docker inspect --format "{{ .NetworkSettings.Networks.nat.IPAddress }}" ancm-app-2.2-outproc') do curl -v http://%%i:80
+docker exec -it ancm-app-2.2-outproc cmd /c curl -v http://localhost:80

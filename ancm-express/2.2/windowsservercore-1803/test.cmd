@@ -1,1 +1,1 @@
-curl -v http://localhost:8006
+docker exec -it microsoft-ancm-express-2.2-windowsservercore-1803 cmd /c curl -v http://localhost:80
