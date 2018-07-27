@@ -1,0 +1,1 @@
+C:\windows\system32\inetsrv\appcmd.exe delete app "Default Web Site/ancm-app-2.1-outproc"
