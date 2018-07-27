@@ -10,7 +10,7 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 
-FROM microsoft/ancm:2.2-windowsservercore-1803
+FROM microsoft/ancm:2.1-windowsservercore-1803
 
 SHELL ["cmd", "/S", "/C"]
 
