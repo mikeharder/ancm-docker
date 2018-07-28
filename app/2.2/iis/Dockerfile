@@ -14,12 +14,4 @@ RUN dotnet publish -c Release -o out /p:AspNetCoreModuleHostingModel=%hosting_mo
 
 
 FROM microsoft/ancm:2.2-windowsservercore-1803
-
-SHELL ["cmd", "/S", "/C"]
-
-# Create logs dir and give IIS full access
-RUN mkdir C:\Logs & icacls C:\Logs /grant "IIS APPPOOL\DefaultAppPool":F
-
-RUN powershell -NoProfile -Command Remove-Item -Recurse C:\inetpub\wwwroot\*
-WORKDIR /inetpub/wwwroot
 COPY --from=build /app/out ./
