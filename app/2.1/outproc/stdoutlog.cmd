@@ -1,1 +1,3 @@
-docker exec -it ancm-app-2.1-outproc cmd /c type C:\logs\stdout*
+@call %~dp0\util\util.cmd
+
+type %ancm%\apps\%publish_path%\logs\stdout*

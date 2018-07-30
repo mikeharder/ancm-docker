@@ -1,1 +1,2 @@
-docker exec -it ancm-app-2.1-outproc cmd /c curl -v http://localhost:80
+@call %~dp0\util\util.cmd
+docker exec -it %container% cmd /c curl -v http://localhost:80/%http_path%
