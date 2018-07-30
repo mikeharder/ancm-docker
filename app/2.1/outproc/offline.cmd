@@ -1,1 +1,3 @@
-docker exec -it ancm-app-2.1-outproc cmd /c copy NUL app_offline.htm
+@call %~dp0\util\util.cmd
+
+copy NUL %ancm%\apps\%publish_path%\app_offline.htm

@@ -1,1 +1,3 @@
-docker exec -it ancm-app-2.1-outproc cmd /c del app_offline.htm
+@call %~dp0\util\util.cmd
+
+del %ancm%\apps\%publish_path%\app_offline.htm

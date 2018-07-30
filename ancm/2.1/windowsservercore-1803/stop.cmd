@@ -1,2 +1,2 @@
 @call %~dp0\util\util.cmd
-@%ancm%\%0
+docker rm -f %container%

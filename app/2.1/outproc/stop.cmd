@@ -1,1 +1,2 @@
-docker rm -f ancm-app-2.1-outproc
+@call %~dp0\util\util.cmd
+@%ancm%\%0

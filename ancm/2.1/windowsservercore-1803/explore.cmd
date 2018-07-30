@@ -1,1 +1,3 @@
-docker run -it --rm --entrypoint cmd microsoft/ancm:2.1-windowsservercore-1803
+@call %~dp0\util\util.cmd
+
+docker run -it --rm --entrypoint cmd %image%

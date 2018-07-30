@@ -1,1 +1,2 @@
-docker exec -it microsoft-ancm-2.1-windowsservercore-1803 cmd /c curl -v http://localhost:80
+@call %~dp0\util\util.cmd
+docker exec -it %container% cmd /c curl -v http://localhost:80
