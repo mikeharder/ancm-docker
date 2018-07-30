@@ -1,2 +1,2 @@
 @call %~dp0\util\util.cmd
-@%ancm%\%0
+@%ancm%\%~n0
