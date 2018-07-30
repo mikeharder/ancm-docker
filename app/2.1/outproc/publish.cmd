@@ -1,6 +1,9 @@
 @call %~dp0\util\util.cmd
 
-: Unregister app with IIS (required to delete logfile)
+: Kill dotnet.exe to unlock stdout logfiles for deletion
+@call %~dp0\kill-dotnet.cmd
+
+: Unregister app with IIS
 docker exec -it %container% cmd /c %appcmd% delete app "Default Web Site/%http_path%"
 
 : Publish to local folder volume mapped into container
