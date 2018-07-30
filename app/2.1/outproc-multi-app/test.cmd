@@ -1,1 +1,5 @@
-docker exec -it ancm-app-2.1-outproc-multi-app cmd /c curl -v http://localhost:80/app1
+@call %~dp0\util\util.cmd
+
+for /l %%i in (1,1,%num_apps%) do (
+  docker exec -it %container% cmd /c curl -v http://localhost:80/%http_path%/%%i
+)
