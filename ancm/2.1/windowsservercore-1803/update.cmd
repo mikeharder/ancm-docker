@@ -11,5 +11,5 @@ docker exec -it %container% cmd /c copy /y \share\aspnetcore.dll \windows\system
 @goto :eof
 
 :usage
-@echo Usage: %0 path\to\aspnetcore.dll
+@echo Usage: %~nx0 path\to\aspnetcore.dll
 @exit /b 1
