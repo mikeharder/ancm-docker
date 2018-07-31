@@ -2,4 +2,4 @@
 
 @call %ancm%\clear-eventlog.cmd
 
-del /s %ancm%\apps\%publish_path%\stdout*.log
+del /s %ancm%\share\%publish_path%\stdout*.log
