@@ -15,9 +15,10 @@ namespace app
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Environment Variables");
-            Console.WriteLine("---------------------");
-            Console.WriteLine(GetEnvironmentVariables());
+            // Uncomment to print environment variables at app startup
+            // Console.WriteLine("Environment Variables");
+            // Console.WriteLine("---------------------");
+            // Console.WriteLine(GetEnvironmentVariables());
 
             CreateWebHostBuilder(args).Build().Run();
         }
