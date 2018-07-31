@@ -1,1 +1,3 @@
-docker build -t microsoft/ancm:2.1-windowsservercore-1803 . %*
+@call %~dp0\util\util.cmd
+
+docker build -t %container% . %*
