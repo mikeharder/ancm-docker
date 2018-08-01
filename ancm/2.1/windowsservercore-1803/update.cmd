@@ -2,7 +2,7 @@
 
 @call %~dp0\util\util.cmd
 
-copy /y %1 share\aspnetcore.dll
+copy /y %1 %~dp0\share\aspnetcore.dll
 
 docker exec -it %container% cmd /c copy /y \share\aspnetcore.dll \windows\system32\inetsrv\aspnetcore.dll
 
