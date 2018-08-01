@@ -1,1 +1,3 @@
-docker run -it --rm -p 8004:80 --name microsoft-ancm-2.2-windowsservercore-1803 microsoft/ancm:2.2-windowsservercore-1803
+@call %~dp0\util\util.cmd
+
+docker run -d -t --rm -v %~dp0share:C:\share --name %container% %image%
