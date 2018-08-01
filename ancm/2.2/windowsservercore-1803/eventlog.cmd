@@ -1,3 +1,3 @@
 @call %~dp0\util\util.cmd
 
-docker exec -it %container% powershell "get-winevent -providername 'IIS AspNetCore Module V2' | format-list -property *"
+docker exec -it %container% powershell "Get-WinEvent -ProviderName 'Microsoft-Windows-IIS*','IIS AspNetCore Module*'  | Format-List -Property Message,ProviderName,TimeCreated"
