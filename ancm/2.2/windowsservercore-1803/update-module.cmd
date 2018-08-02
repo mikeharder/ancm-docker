@@ -2,7 +2,7 @@
 
 @call %~dp0\util\util.cmd
 
-copy /y %1 share\aspnetcorev2.dll
+copy /y %1 %~dp0\share\aspnetcorev2.dll
 
 docker exec -it %container% cmd /c copy /y \share\aspnetcorev2.dll "\Program Files\IIS\Asp.Net Core Module\V2"
 
