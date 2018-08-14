@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +17,7 @@ RuntimeInformation.OSArchitecture:           {RuntimeInformation.OSArchitecture}
 RuntimeInformation.ProcessArchitecture:      {RuntimeInformation.ProcessArchitecture}
 DependencyContext.Default.Target.Framework:  {DependencyContext.Default.Target.Framework}
 ASP.NET Version:                             {typeof(IHostingEnvironment).Assembly.GetName().Version}
+Port:                                        {Environment.GetEnvironmentVariable("ASPNETCORE_PORT")}
 ";
 
         // This method gets called by the runtime. Use this method to add services to the container.
