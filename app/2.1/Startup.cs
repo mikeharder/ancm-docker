@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyModel;
@@ -10,14 +12,17 @@ namespace app
 {
     public class Startup
     {
-        private static readonly string _info =
+        private IServerAddressesFeature _serverAddresses;
+
+        private string Info =>
 $@"
 RuntimeInformation.OSDescription:            {RuntimeInformation.OSDescription}
 RuntimeInformation.OSArchitecture:           {RuntimeInformation.OSArchitecture}
 RuntimeInformation.ProcessArchitecture:      {RuntimeInformation.ProcessArchitecture}
 DependencyContext.Default.Target.Framework:  {DependencyContext.Default.Target.Framework}
 ASP.NET Version:                             {typeof(IHostingEnvironment).Assembly.GetName().Version}
-Port:                                        {Environment.GetEnvironmentVariable("ASPNETCORE_PORT")}
+ASPNETCORE_PORT:                             {Environment.GetEnvironmentVariable("ASPNETCORE_PORT")}
+Port:                                        {new Uri(_serverAddresses.Addresses.Single()).Port}
 ";
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -29,6 +34,8 @@ Port:                                        {Environment.GetEnvironmentVariable
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            _serverAddresses = app.ServerFeatures.Get<IServerAddressesFeature>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -36,7 +43,7 @@ Port:                                        {Environment.GetEnvironmentVariable
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(_info);
+                await context.Response.WriteAsync(Info);
             });
         }
     }
