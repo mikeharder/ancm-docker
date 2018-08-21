@@ -1,0 +1,8 @@
+# Docker
+.dockerignore
+Dockerfile
+
+# Misc
+share
+util
+*.cmd
