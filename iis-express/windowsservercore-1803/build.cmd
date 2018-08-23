@@ -1,1 +1,2 @@
-docker build -t microsoft/iis-express:windowsservercore-1803 . %*
+@call %~dp0\util\util.cmd
+@%common%\%~nx0
