@@ -1,1 +1,1 @@
-docker exec -it %container% cmd /c curl -v http://localhost:80
+docker exec -it %container% cmd /c curl -v http://localhost:%port%

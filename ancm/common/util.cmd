@@ -3,3 +3,4 @@
 @set eventproviders='Microsoft-Windows-IIS*','IIS AspNetCore Module*'
 @set iisreset=iisreset
 @set modulepath=\windows\system32\inetsrv\aspnetcore.dll
+@set port=80
