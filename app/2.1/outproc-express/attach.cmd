@@ -1,1 +1,2 @@
-docker exec -it ancm-app-2.1-outproc-express cmd
+@call %~dp0\util\util.cmd
+@%ancm%\%~nx0
