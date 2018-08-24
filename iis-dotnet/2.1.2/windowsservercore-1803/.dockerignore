@@ -1,6 +1,0 @@
-# Docker
-.dockerignore
-Dockerfile
-
-# Misc
-*.cmd
