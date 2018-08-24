@@ -5,7 +5,7 @@
     <RuntimeFrameworkVersion>2.2.0-preview1-26618-02</RuntimeFrameworkVersion>
 
     <!-- Must match version of Microsoft.AspNetCore.App inside runtime container -->
-    <MicrosoftAspNetCoreAppPackageVersion>2.2.0-preview1-34845</MicrosoftAspNetCoreAppPackageVersion>
+    <MicrosoftAspNetCoreAppPackageVersion>2.2.0-preview2-35076</MicrosoftAspNetCoreAppPackageVersion>
 
     <!-- Enable targeting 2.2 runtime from 2.1 SDK -->
     <NETCoreAppMaximumVersion>99.9</NETCoreAppMaximumVersion>
