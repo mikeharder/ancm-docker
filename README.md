@@ -2,14 +2,27 @@
 
 Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 
-## netcoreapp2.1 + IIS + ANCM v1 (Out-Of-Process)
-1. `cd ancm\2.1\windowsservercore-1803`
+## netcoreapp2.1 + IIS + ANCM v1 RTM (Out-Of-Process)
+1. `cd ancm\2.1.3\windowsservercore-1803`
 2. `build.cmd`
 3. `cd ..\..\..`
 4. `cd app\2.1\outproc`
-5. `build.cmd`
-6. `run.cmd`
-7. `test.cmd`
+5. `run.cmd` (starts container)
+6. `publish.cmd` (publish app to container, register app with IIS)
+7. `test.cmd` (execute `curl http://localhost:port/path` inside container)
+8. `stop.cmd` (stops container)
+
+## netcoreapp2.1 + IIS + ANCM v1 Preview (Out-Of-Process)
+1. `cd ancm\2.1-preview\windowsservercore-1803`
+2. Copy desired build of ANCM MSIs (`aspnetcoremodule_x64_en.msi` and `aspnetcoremodule_x86_en.msi`) to this directory
+2. `build.cmd`
+3. `cd ..\..\..`
+4. `cd app\2.1\outproc`
+5. `use-2.1-preview.cmd` (selects `2.1-preview` image, default is `2.1.3`)
+5. `run.cmd` (starts container)
+6. `publish.cmd` (publish app to container, register app with IIS)
+7. `test.cmd` (execute `curl http://localhost:port/path` inside container)
+8. `stop.cmd` (stops container)
 
 ## netcoreapp2.2 + IIS + ANCM v2 (Out-Of-Process or In-Process)
 1. `cd ancm\2.2\windowsservercore-1803`
