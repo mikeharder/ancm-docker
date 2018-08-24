@@ -3,4 +3,6 @@
 Dockerfile
 
 # Misc
+share
+util
 *.cmd

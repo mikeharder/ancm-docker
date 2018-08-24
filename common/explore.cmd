@@ -1,0 +1,1 @@
+docker run -it --rm -v %1share:C:\share --name %container% --entrypoint cmd %image%

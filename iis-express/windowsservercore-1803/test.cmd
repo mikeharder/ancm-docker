@@ -1,1 +1,2 @@
-docker exec -it microsoft-iis-express-windowsservercore-1803 cmd /c curl -v http://localhost:80
+@call %~dp0\util\util.cmd
+@%common%\%~nx0
