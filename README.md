@@ -24,34 +24,34 @@ Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 7. `test.cmd` (execute `curl http://localhost:port/path` inside container)
 8. `stop.cmd` (stops container)
 
-## netcoreapp2.2 + IIS + ANCM v2 (Out-Of-Process or In-Process)
-1. `cd ancm\2.2\windowsservercore-1803`
+## netcoreapp2.2 + IIS + ANCM v2 Preview (Out-Of-Process or In-Process)
+1. `cd ancm\2.2-preview\windowsservercore-1803`
 2. Copy desired build of hosting bundle (`dotnet-hosting-2.2.0*.exe`) to this directory
 3. `build.cmd`
-4. (Optional) Delete hosting bundle from local directory
-5. `cd ..\..\..`
-6. `cd app\2.2`
-7. Edit `app.csproj` and set `RuntimeFrameworkVersion` and `MicrosoftAspNetCoreAppPackageVersion` to versions installed by hosting bundle
-8. `cd [inproc|outproc]`
-9. `build.cmd`
-10. `run.cmd`
-11. `test.cmd`
+4. `cd ..\..\..`
+5. `cd app\2.2`
+6. Edit `app.csproj` and set `RuntimeFrameworkVersion` and `MicrosoftAspNetCoreAppPackageVersion` to versions installed by hosting bundle
+7. `cd [inproc|outproc]`
+5. `run.cmd` (starts container)
+6. `publish.cmd` (publish app to container, register app with IIS)
+7. `test.cmd` (execute `curl http://localhost:port/path` inside container)
+8. `stop.cmd` (stops container)
 
-## netcoreapp2.1 + IIS Express + ANCM v1 (Out-Of-Process)
+## netcoreapp2.1 + IIS Express + ANCM v1 Preview (Out-Of-Process)
 1. `cd iis-express\windowsservercore-1803`
 1. `build.cmd`
 1. `cd ..\..`
-1. `cd ancm-express\2.1\windowsservercore-1803`
+1. `cd ancm-express\2.1-preview\windowsservercore-1803`
 1. Copy IIS Express MSIs (listed below) to this directory
    1. `ancm_iis_express_x64_en.msi`
    1. `ancm_iis_express_x86_en.msi`
 1. `build.cmd`
-1. (Optional) Delete hosting bundle and MSIs from local directory
 1. `cd ..\..\..`
 1. `cd app\2.1\outproc-express`
-1. `build.cmd`
-1. `run.cmd`
-1. `test.cmd`
+5. `run.cmd` (starts container)
+6. `publish.cmd` (publish app to container, register app with IIS)
+7. `test.cmd` (execute `curl http://localhost:port/path` inside container)
+8. `stop.cmd` (stops container)
 
 ## netcoreapp2.2 + IIS Express + ANCM v2 (Out-Of-Process or In-Process)
 1. `cd iis-express\windowsservercore-1803`
