@@ -1,4 +1,4 @@
-@set ancm=%~dp0..\..\..\..\ancm\2.2\windowsservercore-1803
+@set ancm=%~dp0..\..\..\..\ancm\2.2-preview\windowsservercore-1803
 @call %ancm%\util\util.cmd
 
 @set version=2.2
