@@ -12,9 +12,9 @@ namespace app
 {
     public class Startup
     {
-        private IServerAddressesFeature _serverAddresses;
+        private static string _port = "Unknown";
 
-        private string Info =>
+        private string Info(IHostingEnvironment env) =>
 $@"
 RuntimeInformation.OSDescription:            {RuntimeInformation.OSDescription}
 RuntimeInformation.OSArchitecture:           {RuntimeInformation.OSArchitecture}
@@ -22,7 +22,9 @@ RuntimeInformation.ProcessArchitecture:      {RuntimeInformation.ProcessArchitec
 DependencyContext.Default.Target.Framework:  {DependencyContext.Default.Target.Framework}
 ASP.NET Version:                             {typeof(IHostingEnvironment).Assembly.GetName().Version}
 ASPNETCORE_PORT:                             {Environment.GetEnvironmentVariable("ASPNETCORE_PORT")}
-Port:                                        {new Uri(_serverAddresses.Addresses.Single()).Port}
+Port:                                        {_port}
+ASPNETCORE_ENVIRONMENT:                      {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}
+IHostingEnvironment.EnvironmentName:         {env.EnvironmentName}
 ";
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,7 +36,11 @@ Port:                                        {new Uri(_serverAddresses.Addresses
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            _serverAddresses = app.ServerFeatures.Get<IServerAddressesFeature>();
+            var serverAddressesFeature = app.ServerFeatures.Get<IServerAddressesFeature>();
+            if (serverAddressesFeature != null)
+            {
+                _port = new Uri(serverAddressesFeature.Addresses.Single()).Port.ToString();
+            }
 
             if (env.IsDevelopment())
             {
@@ -43,7 +49,7 @@ Port:                                        {new Uri(_serverAddresses.Addresses
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(Info);
+                await context.Response.WriteAsync(Info(env));
             });
         }
     }
