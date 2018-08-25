@@ -58,21 +58,21 @@ Scripts and dockerfiles to run ANCM and IIS in Windows Containers.
 1. `build.cmd`
 1. `cd ..\..`
 1. `cd ancm-express\2.2\windowsservercore-1803`
-1. Copy desired build of hosting bundle (`dotnet-hosting-2.2.0*.exe`) and IIS Express MSIs (listed below) to this directory
+1. Copy desired build of hosting bundle and IIS Express MSIs (listed below) to this directory
+   1. `dotnet-hosting-2.2.0*.exe`
    1. `ancm_iis_express_x64_en.msi`
    1. `ancm_iis_express_x64_en_v2.msi`
    1. `ancm_iis_express_x86_en.msi`
    1. `ancm_iis_express_x86_en_v2.msi`
 1. `build.cmd`
-1. (Optional) Delete hosting bundle and MSIs from local directory
 1. `cd ..\..\..`
 1. `cd app\2.2`
 1. Edit `app.csproj` and set `RuntimeFrameworkVersion` and `MicrosoftAspNetCoreAppPackageVersion` to versions installed by hosting bundle
 1. `cd [inproc-express|outproc-express]`
-1. `build.cmd`
-1. `run.cmd`
-1. `test.cmd`
-
+5. `run.cmd` (starts container)
+6. `publish.cmd` (publish app to container, register app with IIS)
+7. `test.cmd` (execute `curl http://localhost:port/path` inside container)
+8. `stop.cmd` (stops container)
 
 ## Additional Utility scripts
 ### 32-bit.cmd
