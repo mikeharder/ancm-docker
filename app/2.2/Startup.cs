@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server.Features;
@@ -16,16 +17,23 @@ namespace app
 
         private string Info(IHostingEnvironment env) =>
 $@"
+Microsoft.NETCore.App Version:               {NetCoreAppVersion}
+Microsoft.AspNetCore.App Version:            {AspNetCoreAppVersion}
 RuntimeInformation.OSDescription:            {RuntimeInformation.OSDescription}
 RuntimeInformation.OSArchitecture:           {RuntimeInformation.OSArchitecture}
 RuntimeInformation.ProcessArchitecture:      {RuntimeInformation.ProcessArchitecture}
 DependencyContext.Default.Target.Framework:  {DependencyContext.Default.Target.Framework}
-ASP.NET Version:                             {typeof(IHostingEnvironment).Assembly.GetName().Version}
 ASPNETCORE_PORT:                             {Environment.GetEnvironmentVariable("ASPNETCORE_PORT")}
 Port:                                        {_port}
 ASPNETCORE_ENVIRONMENT:                      {Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}
 IHostingEnvironment.EnvironmentName:         {env.EnvironmentName}
 ";
+
+        private string AspNetCoreAppVersion =>
+            Regex.Match(typeof(IHostingEnvironment).Assembly.Location, @"Microsoft.AspNetCore.App\\([0-9.]+)\\").Groups[1].Value;
+
+        private string NetCoreAppVersion =>
+            Regex.Match(typeof(string).Assembly.Location, @"Microsoft.NETCore.App\\([0-9.]+)\\").Groups[1].Value;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
