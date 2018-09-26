@@ -30,10 +30,10 @@ IHostingEnvironment.EnvironmentName:         {env.EnvironmentName}
 ";
 
         private string AspNetCoreAppVersion =>
-            Regex.Match(typeof(IHostingEnvironment).Assembly.Location, @"Microsoft.AspNetCore.App\\([0-9.]+)\\").Groups[1].Value;
+            Regex.Match(typeof(IHostingEnvironment).Assembly.Location, @"Microsoft.AspNetCore.App\\([^\\]+)\\").Groups[1].Value;
 
         private string NetCoreAppVersion =>
-            Regex.Match(typeof(string).Assembly.Location, @"Microsoft.NETCore.App\\([0-9.]+)\\").Groups[1].Value;
+            Regex.Match(typeof(string).Assembly.Location, @"Microsoft.NETCore.App\\([^\\]+)\\").Groups[1].Value;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
