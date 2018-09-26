@@ -12,7 +12,7 @@ for /l %%i in (1,1,%num_apps%) do (
 
     : Publish to local folder volume mapped into container
     rmdir /s /q %ancm%\share\%publish_path%\%%i
-    dotnet publish -c Release -o %ancm%\share\%publish_path%\%%i  /p:AspNetCoreModuleHostingModel=%hosting_model% %~dp0..\app.csproj
+    dotnet publish -c Release -o %ancm%\share\%publish_path%\%%i  /p:AspNetCoreHostingModel=%hosting_model% %~dp0..\app.csproj
 
     : Create app pool
     docker exec -it %container% cmd /c %appcmd% add apppool /name:%app%-%%i

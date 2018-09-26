@@ -8,7 +8,7 @@ docker exec -it %container% cmd /c %appcmd% delete app "WebSite1/%http_path%"
 
 : Publish to local folder volume mapped into container
 rmdir /s /q %ancm%\share\%publish_path%
-dotnet publish -c Release -o %ancm%\share\%publish_path% /p:AspNetCoreModuleHostingModel=%hosting_model% %~dp0..\app.csproj
+dotnet publish -c Release -o %ancm%\share\%publish_path% /p:AspNetCoreHostingModel=%hosting_model% %~dp0..\app.csproj
 
 : Create folder for stdout logs and give IIS full permissions
 mkdir %ancm%\share\%publish_path%\logs
